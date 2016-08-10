@@ -1,0 +1,9 @@
+<% provide :nav, breadcrumbs([link_to(derailed_number, root_path)]) %>
+<% provide :title, 'Mailing lists' %>
+
+<div id="mailing_lists">
+
+  <ul class="list list-unstyled">
+    <%= render @mailing_lists %>
+  </ul>
+</div>

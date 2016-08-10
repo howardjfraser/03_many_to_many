@@ -1,0 +1,17 @@
+<% provide :nav, breadcrumbs([link_to(derailed_number, root_path)]) %>
+<% provide :title, @mailing_list.name %>
+
+<h5>Name</h5>
+<p>
+  <%= @mailing_list.name %>
+</p>
+
+<h5>Email address</h5>
+<p class="m-b-2">
+  <%= mail_to @mailing_list.email %>
+</p>
+
+<%= link_to 'Edit', edit_mailing_list_path(@mailing_list), class: 'btn btn-success ' %>
+
+<%= link_to 'Delete', @mailing_list, method: :delete, data:
+  { confirm: "Are you sure you want to delete the #{@mailing_list.name} mailing list?" }, class: 'btn btn-outline-success' %>
