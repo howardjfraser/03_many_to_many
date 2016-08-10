@@ -4,3 +4,7 @@ Person.delete_all
   name = "#{FFaker::Name.first_name} #{FFaker::Name.last_name}"
   Person.create! name: name, job_title: FFaker::Job.title, bio: FFaker::Lorem.paragraph
 end
+
+%w(Support Marketing Development).each do |name|
+  MailingList.create! name: name, email: "#{name.downcase}@example.com"
+end

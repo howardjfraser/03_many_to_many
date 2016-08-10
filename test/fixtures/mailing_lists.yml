@@ -1,0 +1,11 @@
+support:
+  name: Support
+  email: support@example.com
+
+development:
+  name: Development
+  email: development@example.com
+
+marketing:
+  name: Marketing
+  email: marketing@example.com
