@@ -9,21 +9,21 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     get people_path
     assert_response :success
     assert_select 'h1', 'People'
-    assert_select 'nav', 'Derailed 03'
+    assert_select 'nav', 'About People Mailing Lists'
   end
 
   test 'get show' do
     get person_path @person
     assert_response :success
     assert_select 'h1', @person.name
-    assert_select 'nav', 'Derailed 03 / People'
+    assert_select 'nav', 'About People Mailing Lists'
   end
 
   test 'get new' do
     get new_person_path
     assert_response :success
     assert_select 'h1', 'New'
-    assert_select 'nav', 'Derailed 03 / People'
+    assert_select 'nav', 'About People Mailing Lists'
   end
 
   test 'valid create' do
@@ -48,7 +48,7 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     get edit_person_path @person
     assert_response :success
     assert_select 'h1', 'Edit'
-    assert_select 'nav', 'Derailed 03 / People'
+    assert_select 'nav', 'About People Mailing Lists'
   end
 
   test 'valid update' do

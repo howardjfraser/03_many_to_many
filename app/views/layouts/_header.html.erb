@@ -1,6 +1,6 @@
 <header>
   <nav class="container p-t-1 p-b-q">
-    <%= yield :nav %>
+    <%= link_to 'About', root_path, class: 'p-r-1' %> <%= link_to 'People', people_path, class: 'p-r-1' %> <%= link_to 'Mailing Lists', mailing_lists_path %>
   </nav>
   <div class="container">
     <%= yield :button %>
