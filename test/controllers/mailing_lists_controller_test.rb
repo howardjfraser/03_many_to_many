@@ -18,4 +18,13 @@ class MailingListsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'h1', @mailing_list.name
   end
+
+  test 'delete' do
+    assert_difference 'MailingList.count', -1 do
+      delete mailing_list_path @mailing_list
+      follow_redirect!
+      assert_select 'h1', 'Mailing lists'
+      assert_select '.flash', "#{@mailing_list.name} mailing list has been deleted"
+    end
+  end
 end

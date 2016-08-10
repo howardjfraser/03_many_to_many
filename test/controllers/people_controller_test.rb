@@ -72,5 +72,6 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     follow_redirect!
     assert_select 'h1', 'People'
+    assert_select '.flash', "#{@person.name} has been deleted"
   end
 end
