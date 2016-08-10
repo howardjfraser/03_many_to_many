@@ -1,4 +1,5 @@
 Person.delete_all
+MailingList.delete_all
 
 64.times do
   name = "#{FFaker::Name.first_name} #{FFaker::Name.last_name}"
