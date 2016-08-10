@@ -22,5 +22,5 @@ module Base
   end
 end
 
-APP_NUMBER = '00'.freeze
-APP_NAME = 'Foundation'.freeze
+APP_NUMBER = '03'.freeze
+APP_NAME = 'Many to many'.freeze
