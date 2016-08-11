@@ -1,0 +1,13 @@
+<%= form_for @mailing_list do |f| %>
+
+  <%= render partial: 'shared/base_errors', locals: { object: @mailing_list } %>
+
+  <%= label_or_error f, :name %>
+  <%= f.text_field :name, autofocus: true %>
+
+  <%= label_or_error f, :email %>
+  <%= f.text_field :email, class: 'm-b-2' %>
+
+  <%= f.button 'Save' %>
+
+<% end %>
