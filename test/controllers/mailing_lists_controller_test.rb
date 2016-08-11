@@ -27,7 +27,7 @@ class MailingListsControllerTest < ActionDispatch::IntegrationTest
   test 'valid create' do
     name = sample_string
     assert_difference 'MailingList.count', 1 do
-      post mailing_lists_path, params: { mailing_list: {name: name, email: sample_string}}
+      post mailing_lists_path, params: { mailing_list: { name: name, email: sample_string } }
     end
     assert_response :redirect
     follow_redirect!
@@ -37,7 +37,7 @@ class MailingListsControllerTest < ActionDispatch::IntegrationTest
 
   test 'invalid create' do
     assert_no_difference 'MailingList.count' do
-      post mailing_lists_path, params: {mailing_list: { name: '', email: ''}}
+      post mailing_lists_path, params: { mailing_list: { name: '', email: '' } }
     end
     assert_response :success
     assert_select 'h1', 'New'
@@ -52,7 +52,7 @@ class MailingListsControllerTest < ActionDispatch::IntegrationTest
 
   test 'valid update' do
     new_name = sample_string
-    patch mailing_list_path @mailing_list, params: {mailing_list: {name: new_name}}
+    patch mailing_list_path @mailing_list, params: { mailing_list: { name: new_name } }
     assert_response :redirect
     follow_redirect!
     assert_select 'h1', new_name
@@ -60,7 +60,7 @@ class MailingListsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'invalid update' do
-    patch mailing_list_path @mailing_list, params: {mailing_list: {name: ''}}
+    patch mailing_list_path @mailing_list, params: { mailing_list: { name: '' } }
     assert_response :success
     assert_select 'h1', 'Edit'
     assert_select '.field_with_errors label', 'Name can’t be blank'
