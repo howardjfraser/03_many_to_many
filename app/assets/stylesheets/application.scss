@@ -23,7 +23,7 @@ strong,
 }
 
 label {
-  @extend .text-muted;
+  font-size: 1.25em;
   font-weight: 500;
 }
 
@@ -61,11 +61,11 @@ button {
   padding: 0.5em 0.25em;
   cursor: pointer;
   position: relative;
-  top: -5.75em;
+  top: -4.75em;
   margin-bottom: -2.875em;
   width: 90%;
   opacity: 0;
-  animation: fade 6s ease-in-out;
+  animation: fade 4s ease-in-out;
 }
 
 ul, ol {

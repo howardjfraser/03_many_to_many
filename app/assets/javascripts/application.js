@@ -17,6 +17,13 @@
 
 document.addEventListener("turbolinks:load", function() {
 
+  // dismiss flash
+  $('body').on('click', '.flash', function(e) {
+    e.preventDefault();
+    // TODO: use CSS animation?
+    $(this).remove();
+  });
+
   // people filter
   var options = {
     valueNames: [ 'name' ]
