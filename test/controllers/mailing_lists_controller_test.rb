@@ -62,7 +62,7 @@ class MailingListsControllerTest < ActionDispatch::IntegrationTest
   test 'invalid update' do
     patch mailing_list_path @mailing_list, params: {mailing_list: {name: ''}}
     assert_response :success
-    assert_select 'h1', 'New'
+    assert_select 'h1', 'Edit'
     assert_select '.field_with_errors label', 'Name can’t be blank'
   end
 

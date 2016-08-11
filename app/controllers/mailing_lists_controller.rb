@@ -30,7 +30,7 @@ class MailingListsController < ApplicationController
     if @mailing_list.save
       redirect_to @mailing_list, notice: "#{@mailing_list.name} mailing list has been updated"
     else
-      render 'update'
+      render 'edit'
     end
   end
 
