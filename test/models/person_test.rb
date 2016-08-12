@@ -51,4 +51,12 @@ class PersonTest < ActiveSupport::TestCase
     @person.name = 'Keith'
     assert @person.first_name == 'Keith'
   end
+
+  test 'dependent destroy of subscription' do
+    subscription_count = @person.subscriptions.count
+    assert subscription_count > 0
+    assert_difference 'Subscription.count', -subscription_count do
+      @person.destroy
+    end
+  end
 end

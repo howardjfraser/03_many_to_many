@@ -1,5 +1,5 @@
 class Person < ApplicationRecord
-  has_many :subscriptions
+  has_many :subscriptions, dependent: :destroy
   has_many :mailing_lists, through: :subscriptions
 
   validates :name, :job_title, presence: true, length: { maximum: 48 }

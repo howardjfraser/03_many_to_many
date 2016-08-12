@@ -37,4 +37,12 @@ class MailingListTest < ActiveSupport::TestCase
     @mailing_lists = MailingList.all.sorted
     assert @mailing_lists.last == @mailing_list
   end
+
+  test 'dependent destroy of subscriptions' do
+    subscription_count = @mailing_list.subscriptions.count
+    assert subscription_count > 0
+    assert_difference 'Subscription.count', -subscription_count do
+      @mailing_list.destroy
+    end
+  end
 end
