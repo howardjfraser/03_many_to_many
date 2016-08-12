@@ -10,6 +10,11 @@
   <%= mail_to @mailing_list.email %>
 </p>
 
+<h5>Subscribers</h5>
+<p>
+  <%= render partial: @mailing_list.people %>
+</p>
+
 <%= link_to 'Edit', edit_mailing_list_path(@mailing_list), class: 'btn btn-success ' %>
 
 <%= link_to 'Delete', @mailing_list, method: :delete, data:

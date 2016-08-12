@@ -51,5 +51,4 @@ class MailingListTest < ActiveSupport::TestCase
     @mailing_list.subscriptions.create person_id: existing_sub.id
     refute @mailing_list.valid?
   end
-
 end

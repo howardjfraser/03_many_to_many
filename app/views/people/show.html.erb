@@ -6,8 +6,13 @@
 </p>
 
 <h5>Bio</h5>
-<p class="m-b-2">
+<p>
   <%= @person.bio %>
+</p>
+
+<h5>Mailing Lists</h5>
+<p>
+  <%= render partial: @person.mailing_lists %>
 </p>
 
 <%= link_to 'Edit', edit_person_path(@person), class: 'btn btn-success' %>

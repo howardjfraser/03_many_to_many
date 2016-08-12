@@ -2,6 +2,6 @@ class Subscription < ApplicationRecord
   belongs_to :person
   belongs_to :mailing_list
 
-  # TODO: why is no scope required?
-  validates :person, :mailing_list, presence: true, uniqueness: true
+  validates :person, presence: true, uniqueness: { scope: :mailing_list }
+  validates :mailing_list, presence: true, uniqueness: { scope: :person }
 end
