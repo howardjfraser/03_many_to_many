@@ -1,11 +1,6 @@
 <% provide :title, @mailing_list.name %>
 
-<h5>Name</h5>
-<p>
-  <%= @mailing_list.name %>
-</p>
-
-<h5>Email address</h5>
+<h5>Email</h5>
 <p class="m-b-2">
   <%= mail_to @mailing_list.email %>
 </p>
