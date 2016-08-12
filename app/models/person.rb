@@ -1,4 +1,7 @@
 class Person < ApplicationRecord
+  has_many :subscriptions
+  has_many :mailing_lists, through: :subscriptions
+
   validates :name, :job_title, presence: true, length: { maximum: 48 }
   validates :bio, presence: true, length: { maximum: 512 }
 
