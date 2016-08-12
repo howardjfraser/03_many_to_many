@@ -5,3 +5,7 @@ david_support:
 david_marketing:
   person: david
   mailing_list: marketing
+
+michael_marketing:
+  person: michael
+  mailing_list: marketing

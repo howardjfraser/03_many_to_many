@@ -45,4 +45,11 @@ class MailingListTest < ActiveSupport::TestCase
       @mailing_list.destroy
     end
   end
+
+  test 'can only subscribe once' do
+    existing_sub = @mailing_list.people.first
+    @mailing_list.subscriptions.create person_id: existing_sub.id
+    refute @mailing_list.valid?
+  end
+
 end
