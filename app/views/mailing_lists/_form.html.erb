@@ -8,7 +8,9 @@
   <%= label_or_error f, :email %>
   <%= f.text_field :email, class: 'm-b-2' %>
 
-  <%= f.button 'Save' %>
-  <%= link_to 'Cancel', @mailing_list, class: 'btn btn-outline-success' %>
+  <div class="m-y-2">
+    <%= f.button 'Save' %>
+    <%= link_to 'Cancel', @mailing_list, class: 'btn btn-outline-success' %>
+  </div>
 
 <% end %>
