@@ -9,14 +9,13 @@
   <%= f.text_field :job_title, class: '' %>
 
   <%= label_or_error f, :bio %>
-  <%= f.text_area :bio, class: 'm-b-2', rows: '3' %>
+  <%= f.text_area :bio, rows: '3' %>
 
   <div>
     <!-- TODO: layout?  -->
     <%= f.collection_check_boxes :mailing_list_ids, MailingList.sorted, :id, :name do |b|
           b.label(class: 'p-r-1') { b.check_box(class: 'zz') + " #{b.text}" }
         end %>
-  </div>
 
   <div class="m-y-2">
     <%= f.button 'Save' %>
