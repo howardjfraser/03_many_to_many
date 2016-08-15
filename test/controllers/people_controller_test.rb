@@ -3,6 +3,7 @@ require 'test_helper'
 class PeopleControllerTest < ActionDispatch::IntegrationTest
   def setup
     @person = people(:david)
+    @mailing_list = mailing_lists(:development)
   end
 
   test 'get index' do
@@ -52,11 +53,12 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'valid update' do
-    patch person_path @person, params: { person: { name: sample_string } }
+    patch person_path @person, params: { person: { name: sample_string, mailing_list_ids: [@mailing_list.id] } }
     assert_response :redirect
     follow_redirect!
     assert_select 'h1', @person.reload.name
     assert_select '.flash', "#{@person.name} has been updated"
+    assert_select 'a[href=?]', mailing_list_path(@mailing_list)
   end
 
   test 'invalid update' do

@@ -35,7 +35,7 @@ class PeopleController < ApplicationController
   private
 
   def person_params
-    params.require(:person).permit(:name, :job_title, :bio)
+    params.require(:person).permit(:name, :job_title, :bio, mailing_list_ids: [])
   end
 
   def save_person(action)
