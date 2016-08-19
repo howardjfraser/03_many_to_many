@@ -22,6 +22,10 @@ strong,
   margin-bottom: 0.5em;
 }
 
+.d-none {
+  display: none;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -56,9 +60,10 @@ button {
   padding: 0.5em 0.25em;
   cursor: pointer;
   position: relative;
-  top: -4.75em;
+  top: -2em;
   margin-bottom: -2.875em;
   width: 90%;
+  max-width: 400px;
   opacity: 0;
   animation: fade 4s ease-in-out;
 }
